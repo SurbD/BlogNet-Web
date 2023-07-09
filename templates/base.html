@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} - Blog Connect</title>
+</head>
+<body>
+    <header>
+        <div><a class="blog-logo" href="{{ url_for('index') }}">BlogNet</a></div>
+        <nav class="navbar">
+            <u class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+        <a href="{{ url_for('create') }}" class="create"><button class="btn">Create</button></a>
+    </header> <!-- End of Header -->
+    <main role="main" class="container">
+        <!-- Main Section -->
+        <div class="row">
+            <div class="main-article">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="sidebar">
+                <h3>Our Sidebar</h3>
+                <p class="text-muted">Blognet is a global blogging platform for experienced and new bloggers.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Latest Posts</li>
+                    <li class="list-group-item">Announcements</li>
+                    <li class="list-group-item">Marketplace</li>
+                    <li class="list-group-item">FAQS</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

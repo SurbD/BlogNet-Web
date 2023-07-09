@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content-section">
+        <form action="" method="POST">
+            <fieldset class="form-group">
+                <legend class="form-legend">{% block title %}Create Post{% endblock %}</legend>
+                <div class="form-tags">
+                    <label for="title">Title</label>
+                    <input type="text" class="input-box" name="title" id="title" placeholder="BlogNet Header" required>
+                </div>
+                <div class="form-tags">
+                    <label for="author">Author</label>
+                    <input type="text" class="input-box" name="author" id="author" placeholder="Steve Bobs" required>
+                </div>
+                <div class="form-tags">
+                    <label for="content">Content</label>
+                    <textarea name="content" id="content" placeholder="What do you want to talk about? " class="input-field input-box" required></textarea>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <input type="submit" class="btn submit-btn">
+            </div>
+        </form>
+    </div>
+{% endblock %}

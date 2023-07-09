@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Post{% endblock %}
+{% block content %}
+    <article class="content-section">
+        <div class="content-post">
+            <div class="post-meta">
+                <a href="#" class="author-link">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted.date() }}</small>
+            </div>
+            <h2 class="mb-title"><a href="" class="article-title">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content.capitalize() }}</p>
+        </div>
+    </article>
+    <div class="options">
+        <a href="{{ url_for('edit', post_id=post.id) }}"><button class="btn option-btn">Edit</button></a>
+        <form method="post" action="{{ url_for('delete', post_id=post.id) }}">
+            <input type="submit" value="Delete" class="btn option-btn" onclick="return confirm('Are you sure you want to delete this post?')">
+        </form>
+    </div>
+{% endblock %}
